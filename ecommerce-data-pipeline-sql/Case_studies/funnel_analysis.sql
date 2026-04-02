@@ -16,7 +16,7 @@ FROM website_sessions ws
 LEFT JOIN orders o 
 ON ws.website_session_id = o.website_session_id
 GROUP BY utm_source
-ORDER BY conversion_rate DESC;
+ORDER BY conversion_rate_pct DESC;
 
 -- 3. Revenue by Channel
 select ws.utm_source, sum(o.price_usd) as revenue 
