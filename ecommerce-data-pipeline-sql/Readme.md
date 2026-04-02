@@ -64,6 +64,40 @@ SELECT * FROM monthly_order;
 
 SELECT * FROM monthly_website_traffic;
 
+## Project 3 – Product Performance – Sales & Revenue
+
+### Features
+- Best-selling products and revenue contribution
+- Seasonal trends visualized
+
+# Example Queries :
+
+SELECT stage, COUNT(*) AS users
+FROM customer_funnel
+GROUP BY stage
+ORDER BY stage;
+
+## Project 4 – Funnel Analysis – Customer Journey
+
+### Features
+- Best-selling products and revenue contribution
+- Seasonal trends visualized
+
+# Example Queries :
+
+SELECT product_name,
+       SUM(quantity_sold) AS total_units,
+       SUM(total_price) AS total_revenue
+FROM orders
+JOIN products USING(product_id)
+GROUP BY product_name
+ORDER BY total_revenue DESC;
+
+## EER Diagram :
+<div align="center">
+  <img src="EER.png" alt="EER">
+</div>
+
 # Technologies Used
 **PostgreSQL**
 1. PL/pgSQL for triggers and stored procedures
